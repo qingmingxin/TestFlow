@@ -1,0 +1,2136 @@
+==1613090== Memcheck, a memory error detector
+==1613090== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1613090== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1613090== Command: ./test 172.19.204.50 -i 1 -g 3
+==1613090== Parent PID: 1577170
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48707E4: get_priv (ibverbs.h:82)
+==1613090==    by 0x48707E4: get_ops (ibverbs.h:87)
+==1613090==    by 0x48707E4: ibv_destroy_qp@@IBVERBS_1.1 (verbs.c:729)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3678 is 8 bytes inside a block of size 952 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E811A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4F22: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52E7EEF: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10D0FB: prepare(resources*) (test.cc:121)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48707E7: ibv_destroy_qp@@IBVERBS_1.1 (verbs.c:729)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48707EB: ibv_destroy_qp@@IBVERBS_1.1 (verbs.c:729)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2888 is 296 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52E7F55: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3688 is 24 bytes inside a block of size 952 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E811A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4F22: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52E7EEF: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10D0FB: prepare(resources*) (test.cc:121)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52E7F59: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3678 is 8 bytes inside a block of size 952 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E811A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4F22: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52E7EEF: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10D0FB: prepare(resources*) (test.cc:121)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52E7F61: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3178 is 24 bytes inside a block of size 88 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6ACB: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E475C: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x486FFAE: ibv_alloc_pd@@IBVERBS_1.1 (verbs.c:296)
+==1613090==    by 0x10CCD5: prepare(resources*) (test.cc:60)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x52E7F6F: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef39f4 is 900 bytes inside a block of size 952 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E811A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4F22: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52E7EEF: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10D0FB: prepare(resources*) (test.cc:121)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x52E7F7D: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2520 is 267,392 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4866E95: fill_attr_in_obj (cmd_ioctl.h:253)
+==1613090==    by 0x4866E95: ibv_cmd_destroy_qp (cmd_qp.c:457)
+==1613090==    by 0x52E7F93: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef36a8 is 56 bytes inside a block of size 952 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E811A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4F22: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52E7EEF: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10D0FB: prepare(resources*) (test.cc:121)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4866E98: ibv_cmd_destroy_qp (cmd_qp.c:459)
+==1613090==    by 0x52E7F93: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3678 is 8 bytes inside a block of size 952 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E811A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4F22: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52E7EEF: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10D0FB: prepare(resources*) (test.cc:121)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48643CC: _execute_ioctl_fallback (cmd_fallback.c:90)
+==1613090==    by 0x4866EFE: ibv_cmd_destroy_qp (cmd_qp.c:459)
+==1613090==    by 0x52E7F93: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48643DD: bitmap_test_bit (bitmap.h:92)
+==1613090==    by 0x48643DD: _execute_ioctl_fallback (cmd_fallback.c:90)
+==1613090==    by 0x4866EFE: ibv_cmd_destroy_qp (cmd_qp.c:459)
+==1613090==    by 0x52E7F93: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2760 is 0 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48650A7: verbs_get_ctx (verbs.h:2163)
+==1613090==    by 0x48650A7: execute_ioctl (cmd_ioctl.c:130)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x4866EFE: ibv_cmd_destroy_qp (cmd_qp.c:459)
+==1613090==    by 0x52E7F93: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1320 is 640 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4865155: execute_ioctl (cmd_ioctl.c:145)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x4866EFE: ibv_cmd_destroy_qp (cmd_qp.c:459)
+==1613090==    by 0x52E7F93: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4865176: execute_ioctl (cmd_ioctl.c:147)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x4866EFE: ibv_cmd_destroy_qp (cmd_qp.c:459)
+==1613090==    by 0x52E7F93: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb12e8 is 584 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x486517C: execute_ioctl (cmd_ioctl.c:145)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x4866EFE: ibv_cmd_destroy_qp (cmd_qp.c:459)
+==1613090==    by 0x52E7F93: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2770 is 16 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x52E7F9B: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C5BD: resources_destroy(resources*) (basic.h:947)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2520 is 267,392 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x487033C: get_priv (ibverbs.h:82)
+==1613090==    by 0x487033C: get_ops (ibverbs.h:87)
+==1613090==    by 0x487033C: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef35f0 is 0 bytes inside a block of size 64 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6A1E: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4E1F: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x48700AE: ibv_reg_mr_iova2 (verbs.c:323)
+==1613090==    by 0x10CF98: __ibv_reg_mr (verbs.h:2537)
+==1613090==    by 0x10CF98: prepare(resources*) (test.cc:100)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x487033F: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:489)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3624 is 52 bytes inside a block of size 64 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6A1E: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4E1F: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x48700AE: ibv_reg_mr_iova2 (verbs.c:323)
+==1613090==    by 0x10CF98: __ibv_reg_mr (verbs.h:2537)
+==1613090==    by 0x10CF98: prepare(resources*) (test.cc:100)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4870342: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:488)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3620 is 48 bytes inside a block of size 64 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6A1E: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4E1F: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x48700AE: ibv_reg_mr_iova2 (verbs.c:323)
+==1613090==    by 0x10CF98: __ibv_reg_mr (verbs.h:2537)
+==1613090==    by 0x10CF98: prepare(resources*) (test.cc:100)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4870346: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x487034A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:486)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3600 is 16 bytes inside a block of size 64 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6A1E: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4E1F: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x48700AE: ibv_reg_mr_iova2 (verbs.c:323)
+==1613090==    by 0x10CF98: __ibv_reg_mr (verbs.h:2537)
+==1613090==    by 0x10CF98: prepare(resources*) (test.cc:100)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4870351: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:487)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3608 is 24 bytes inside a block of size 64 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6A1E: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4E1F: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x48700AE: ibv_reg_mr_iova2 (verbs.c:323)
+==1613090==    by 0x10CF98: __ibv_reg_mr (verbs.h:2537)
+==1613090==    by 0x10CF98: prepare(resources*) (test.cc:100)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4870355: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2858 is 248 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x52E6A05: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3620 is 48 bytes inside a block of size 64 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6A1E: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4E1F: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x48700AE: ibv_reg_mr_iova2 (verbs.c:323)
+==1613090==    by 0x10CF98: __ibv_reg_mr (verbs.h:2537)
+==1613090==    by 0x10CF98: prepare(resources*) (test.cc:100)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4865673: fill_attr_in_obj (cmd_ioctl.h:253)
+==1613090==    by 0x4865673: ibv_cmd_dereg_mr (cmd_mr.c:64)
+==1613090==    by 0x52E6A12: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3610 is 32 bytes inside a block of size 64 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6A1E: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4E1F: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x48700AE: ibv_reg_mr_iova2 (verbs.c:323)
+==1613090==    by 0x10CF98: __ibv_reg_mr (verbs.h:2537)
+==1613090==    by 0x10CF98: prepare(resources*) (test.cc:100)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4865676: ibv_cmd_dereg_mr (cmd_mr.c:67)
+==1613090==    by 0x52E6A12: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef35f0 is 0 bytes inside a block of size 64 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6A1E: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4E1F: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x48700AE: ibv_reg_mr_iova2 (verbs.c:323)
+==1613090==    by 0x10CF98: __ibv_reg_mr (verbs.h:2537)
+==1613090==    by 0x10CF98: prepare(resources*) (test.cc:100)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48643CC: _execute_ioctl_fallback (cmd_fallback.c:90)
+==1613090==    by 0x48656BC: ibv_cmd_dereg_mr (cmd_mr.c:67)
+==1613090==    by 0x52E6A12: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48643DD: bitmap_test_bit (bitmap.h:92)
+==1613090==    by 0x48643DD: _execute_ioctl_fallback (cmd_fallback.c:90)
+==1613090==    by 0x48656BC: ibv_cmd_dereg_mr (cmd_mr.c:67)
+==1613090==    by 0x52E6A12: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2760 is 0 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48650A7: verbs_get_ctx (verbs.h:2163)
+==1613090==    by 0x48650A7: execute_ioctl (cmd_ioctl.c:130)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x48656BC: ibv_cmd_dereg_mr (cmd_mr.c:67)
+==1613090==    by 0x52E6A12: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1320 is 640 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4865155: execute_ioctl (cmd_ioctl.c:145)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x48656BC: ibv_cmd_dereg_mr (cmd_mr.c:67)
+==1613090==    by 0x52E6A12: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4865176: execute_ioctl (cmd_ioctl.c:147)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x48656BC: ibv_cmd_dereg_mr (cmd_mr.c:67)
+==1613090==    by 0x52E6A12: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb12e8 is 584 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x486517C: execute_ioctl (cmd_ioctl.c:145)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x48656BC: ibv_cmd_dereg_mr (cmd_mr.c:67)
+==1613090==    by 0x52E6A12: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487035A: ibv_dereg_mr@@IBVERBS_1.1 (verbs.c:491)
+==1613090==    by 0x10C610: resources_destroy(resources*) (basic.h:956)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2770 is 16 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid free() / delete / delete[] / realloc()
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x10C663: resources_destroy(resources*) (basic.h:965)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3570 is 0 bytes inside a block of size 64 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x10C663: resources_destroy(resources*) (basic.h:965)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x10CDBC: prepare(resources*) (test.cc:78)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x487051B: get_priv (ibverbs.h:82)
+==1613090==    by 0x487051B: get_ops (ibverbs.h:87)
+==1613090==    by 0x487051B: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3200 is 0 bytes inside a block of size 592 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E799A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487052B: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6E35: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x48704C7: ibv_create_cq@@IBVERBS_1.1 (verbs.c:552)
+==1613090==    by 0x10CD56: prepare(resources*) (test.cc:69)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x487051E: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:571)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3208 is 8 bytes inside a block of size 592 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E799A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487052B: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6E35: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x48704C7: ibv_create_cq@@IBVERBS_1.1 (verbs.c:552)
+==1613090==    by 0x10CD56: prepare(resources*) (test.cc:69)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4870522: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4870526: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2870 is 272 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x48620B5: fill_attr_in_obj (cmd_ioctl.h:253)
+==1613090==    by 0x48620B5: ibv_cmd_destroy_cq (cmd_cq.c:184)
+==1613090==    by 0x52E7922: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487052B: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3218 is 24 bytes inside a block of size 592 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E799A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487052B: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6E35: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x48704C7: ibv_create_cq@@IBVERBS_1.1 (verbs.c:552)
+==1613090==    by 0x10CD56: prepare(resources*) (test.cc:69)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48620B8: ibv_cmd_destroy_cq (cmd_cq.c:186)
+==1613090==    by 0x52E7922: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487052B: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3200 is 0 bytes inside a block of size 592 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E799A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487052B: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6E35: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x48704C7: ibv_create_cq@@IBVERBS_1.1 (verbs.c:552)
+==1613090==    by 0x10CD56: prepare(resources*) (test.cc:69)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48643CC: _execute_ioctl_fallback (cmd_fallback.c:90)
+==1613090==    by 0x486211E: ibv_cmd_destroy_cq (cmd_cq.c:186)
+==1613090==    by 0x52E7922: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487052B: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48643DD: bitmap_test_bit (bitmap.h:92)
+==1613090==    by 0x48643DD: _execute_ioctl_fallback (cmd_fallback.c:90)
+==1613090==    by 0x486211E: ibv_cmd_destroy_cq (cmd_cq.c:186)
+==1613090==    by 0x52E7922: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487052B: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2760 is 0 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48650A7: verbs_get_ctx (verbs.h:2163)
+==1613090==    by 0x48650A7: execute_ioctl (cmd_ioctl.c:130)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x486211E: ibv_cmd_destroy_cq (cmd_cq.c:186)
+==1613090==    by 0x52E7922: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487052B: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1320 is 640 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4865155: execute_ioctl (cmd_ioctl.c:145)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x486211E: ibv_cmd_destroy_cq (cmd_cq.c:186)
+==1613090==    by 0x52E7922: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487052B: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4865176: execute_ioctl (cmd_ioctl.c:147)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x486211E: ibv_cmd_destroy_cq (cmd_cq.c:186)
+==1613090==    by 0x52E7922: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487052B: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb12e8 is 584 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x486517C: execute_ioctl (cmd_ioctl.c:145)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x486211E: ibv_cmd_destroy_cq (cmd_cq.c:186)
+==1613090==    by 0x52E7922: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x487052B: ibv_destroy_cq@@IBVERBS_1.1 (verbs.c:574)
+==1613090==    by 0x10C686: resources_destroy(resources*) (basic.h:970)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2770 is 16 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x486FFC4: get_priv (ibverbs.h:82)
+==1613090==    by 0x486FFC4: get_ops (ibverbs.h:87)
+==1613090==    by 0x486FFC4: ibv_dealloc_pd@@IBVERBS_1.1 (verbs.c:307)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3160 is 0 bytes inside a block of size 88 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6ACB: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E475C: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x486FFAE: ibv_alloc_pd@@IBVERBS_1.1 (verbs.c:296)
+==1613090==    by 0x10CCD5: prepare(resources*) (test.cc:60)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x486FFC7: ibv_dealloc_pd@@IBVERBS_1.1 (verbs.c:307)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x486FFCB: ibv_dealloc_pd@@IBVERBS_1.1 (verbs.c:307)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2848 is 232 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52E6A3C: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3178 is 24 bytes inside a block of size 88 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6ACB: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E475C: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x486FFAE: ibv_alloc_pd@@IBVERBS_1.1 (verbs.c:296)
+==1613090==    by 0x10CCD5: prepare(resources*) (test.cc:60)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x52E6A41: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3174 is 20 bytes inside a block of size 88 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6ACB: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E475C: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x486FFAE: ibv_alloc_pd@@IBVERBS_1.1 (verbs.c:296)
+==1613090==    by 0x10CCD5: prepare(resources*) (test.cc:60)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52E6A8D: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3188 is 40 bytes inside a block of size 88 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6ACB: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E475C: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x486FFAE: ibv_alloc_pd@@IBVERBS_1.1 (verbs.c:296)
+==1613090==    by 0x10CCD5: prepare(resources*) (test.cc:60)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4865C73: fill_attr_in_obj (cmd_ioctl.h:253)
+==1613090==    by 0x4865C73: ibv_cmd_dealloc_pd (cmd_pd.c:41)
+==1613090==    by 0x52E6AB7: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3168 is 8 bytes inside a block of size 88 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6ACB: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E475C: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x486FFAE: ibv_alloc_pd@@IBVERBS_1.1 (verbs.c:296)
+==1613090==    by 0x10CCD5: prepare(resources*) (test.cc:60)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4865C76: ibv_cmd_dealloc_pd (cmd_pd.c:44)
+==1613090==    by 0x52E6AB7: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3160 is 0 bytes inside a block of size 88 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E6ACB: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E475C: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x486FFAE: ibv_alloc_pd@@IBVERBS_1.1 (verbs.c:296)
+==1613090==    by 0x10CCD5: prepare(resources*) (test.cc:60)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48643CC: _execute_ioctl_fallback (cmd_fallback.c:90)
+==1613090==    by 0x4865CBC: ibv_cmd_dealloc_pd (cmd_pd.c:44)
+==1613090==    by 0x52E6AB7: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48643DD: bitmap_test_bit (bitmap.h:92)
+==1613090==    by 0x48643DD: _execute_ioctl_fallback (cmd_fallback.c:90)
+==1613090==    by 0x4865CBC: ibv_cmd_dealloc_pd (cmd_pd.c:44)
+==1613090==    by 0x52E6AB7: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2760 is 0 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48650A7: verbs_get_ctx (verbs.h:2163)
+==1613090==    by 0x48650A7: execute_ioctl (cmd_ioctl.c:130)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x4865CBC: ibv_cmd_dealloc_pd (cmd_pd.c:44)
+==1613090==    by 0x52E6AB7: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1320 is 640 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4865155: execute_ioctl (cmd_ioctl.c:145)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x4865CBC: ibv_cmd_dealloc_pd (cmd_pd.c:44)
+==1613090==    by 0x52E6AB7: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4865176: execute_ioctl (cmd_ioctl.c:147)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x4865CBC: ibv_cmd_dealloc_pd (cmd_pd.c:44)
+==1613090==    by 0x52E6AB7: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb12e8 is 584 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x486517C: execute_ioctl (cmd_ioctl.c:145)
+==1613090==    by 0x48643ED: _execute_ioctl_fallback (cmd_fallback.c:93)
+==1613090==    by 0x4865CBC: ibv_cmd_dealloc_pd (cmd_pd.c:44)
+==1613090==    by 0x52E6AB7: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x10C6D9: resources_destroy(resources*) (basic.h:979)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2770 is 16 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4869F98: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4869F9C: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef28b0 is 336 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52C9D2A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb11e0 is 320 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52C9D2D: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef24c8 is 267,304 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52C9D48: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef13f0 is 262,992 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52C9D61: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2540 is 267,424 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52C9D70: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2530 is 267,408 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52C9D7C: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2548 is 267,432 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52C9D90: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef24d0 is 267,312 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52EC0D2: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2660 is 267,712 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52EC0D9: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2660 is 267,712 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52EC11A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2680 is 267,744 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52EC128: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2680 is 267,744 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52EC16A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2670 is 267,728 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52EC178: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2670 is 267,728 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52EC1BA: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2698 is 267,768 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x52DF3C7: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef310c is 140 bytes inside a block of size 152 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4AC2: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CAB20: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB3DF: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 1
+==1613090==    at 0x52DF415: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef30f0 is 112 bytes inside a block of size 152 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4AC2: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CAB20: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB3DF: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52DF490: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef30b0 is 48 bytes inside a block of size 152 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4AC2: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CAB20: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB3DF: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 1
+==1613090==    at 0x52DF499: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef30f0 is 112 bytes inside a block of size 152 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4AC2: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CAB20: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB3DF: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x52DF455: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3108 is 136 bytes inside a block of size 152 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4AC2: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CAB20: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB3DF: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x48650A7: verbs_get_ctx (verbs.h:2163)
+==1613090==    by 0x48650A7: execute_ioctl (cmd_ioctl.c:130)
+==1613090==    by 0x52DF48A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1320 is 640 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4865155: execute_ioctl (cmd_ioctl.c:145)
+==1613090==    by 0x52DF48A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4865176: execute_ioctl (cmd_ioctl.c:147)
+==1613090==    by 0x52DF48A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb12e8 is 584 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x486517C: execute_ioctl (cmd_ioctl.c:145)
+==1613090==    by 0x52DF48A: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2770 is 16 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid free() / delete / delete[] / realloc()
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef3080 is 0 bytes inside a block of size 152 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52C9DB1: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52E4AC2: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CAB20: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB3DF: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4CF7FC4: pthread_mutex_lock (pthread_mutex_lock.c:67)
+==1613090==    by 0x52C9DB9: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef26c8 is 267,816 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4CF7FEF: pthread_mutex_lock (pthread_mutex_lock.c:80)
+==1613090==    by 0x52C9DB9: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef26b8 is 267,800 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4CF7FF9: pthread_mutex_lock (pthread_mutex_lock.c:81)
+==1613090==    by 0x52C9DB9: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef26c0 is 267,808 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid write of size 4
+==1613090==    at 0x4CF800C: pthread_mutex_lock (pthread_mutex_lock.c:159)
+==1613090==    by 0x52C9DB9: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef26c0 is 267,808 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4CF800F: pthread_mutex_lock (pthread_mutex_lock.c:161)
+==1613090==    by 0x52C9DB9: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef26c4 is 267,812 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52C9DBA: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef26a8 is 267,784 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x52C9DBE: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef26a8 is 267,784 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4CF97B4: __pthread_mutex_unlock_usercnt (pthread_mutex_unlock.c:41)
+==1613090==    by 0x4CF97B4: pthread_mutex_unlock (pthread_mutex_unlock.c:357)
+==1613090==    by 0x52C9E10: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef26c8 is 267,816 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4CF97CB: __pthread_mutex_unlock_usercnt (pthread_mutex_unlock.c:55)
+==1613090==    by 0x4CF97CB: pthread_mutex_unlock (pthread_mutex_unlock.c:357)
+==1613090==    by 0x52C9E10: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef26c4 is 267,812 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid write of size 4
+==1613090==    at 0x4CF97D1: __pthread_mutex_unlock_usercnt (pthread_mutex_unlock.c:52)
+==1613090==    by 0x4CF97D1: pthread_mutex_unlock (pthread_mutex_unlock.c:357)
+==1613090==    by 0x52C9E10: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef26c0 is 267,808 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4CF97D8: __pthread_mutex_unlock_usercnt (pthread_mutex_unlock.c:58)
+==1613090==    by 0x4CF97D8: pthread_mutex_unlock (pthread_mutex_unlock.c:357)
+==1613090==    by 0x52C9E10: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef26c8 is 267,816 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4CF97DB: __pthread_mutex_unlock_usercnt (pthread_mutex_unlock.c:58)
+==1613090==    by 0x4CF97DB: pthread_mutex_unlock (pthread_mutex_unlock.c:357)
+==1613090==    by 0x52C9E10: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef26b8 is 267,800 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4869F48: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb1170 is 208 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid free() / delete / delete[] / realloc()
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4ef2760 is 0 bytes inside a block of size 640 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869F53: verbs_uninit_context (device.c:434)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869AB9: verbs_init_context (device.c:246)
+==1613090==    by 0x4869C3E: _verbs_init_and_alloc_context (device.c:282)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== 
+==1613090== More than 100 errors detected.  Subsequent errors
+==1613090== will still be recorded, but in less detail than before.
+==1613090== Invalid read of size 4
+==1613090==    at 0x4869F54: verbs_uninit_context (device.c:435)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb12e8 is 584 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 4
+==1613090==    at 0x4869F64: verbs_uninit_context (device.c:437)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb12ec is 588 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid read of size 8
+==1613090==    at 0x4869F74: verbs_uninit_context (device.c:439)
+==1613090==    by 0x52C9E18: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb11e0 is 320 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== Invalid free() / delete / delete[] / realloc()
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAE9: main (test.cc:372)
+==1613090==  Address 0x4eb10a0 is 0 bytes inside a block of size 267,904 free'd
+==1613090==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869FA1: ibv_close_device@@IBVERBS_1.1 (device.c:448)
+==1613090==    by 0x10C72C: resources_destroy(resources*) (basic.h:988)
+==1613090==    by 0x10DAA4: main (test.cc:365)
+==1613090==  Block was alloc'd at
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x4869C24: _verbs_init_and_alloc_context (device.c:273)
+==1613090==    by 0x52C9E88: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x52CB338: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x4869CC7: verbs_open_device (device.c:345)
+==1613090==    by 0x10CC4E: prepare(resources*) (test.cc:50)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== 
+==1613090== HEAP SUMMARY:
+==1613090==     in use at exit: 3,992 bytes in 8 blocks
+==1613090==   total heap usage: 91 allocs, 87 frees, 492,998 bytes allocated
+==1613090== 
+==1613090== 16 bytes in 1 blocks are definitely lost in loss record 1 of 8
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x486970F: ibv_get_device_list@@IBVERBS_1.1 (device.c:80)
+==1613090==    by 0x10CB34: prepare(resources*) (test.cc:31)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== 720 bytes in 1 blocks are possibly lost in loss record 5 of 8
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x52C837C: ??? (in /usr/lib/x86_64-linux-gnu/libmlx5.so.1.24.43.0)
+==1613090==    by 0x486BEE3: try_driver (init.c:385)
+==1613090==    by 0x486C2F0: try_drivers (init.c:451)
+==1613090==    by 0x486C2F0: try_all_drivers (init.c:541)
+==1613090==    by 0x486CE7E: ibverbs_get_device_list (init.c:605)
+==1613090==    by 0x48696F4: ibv_get_device_list@@IBVERBS_1.1 (device.c:74)
+==1613090==    by 0x10CB34: prepare(resources*) (test.cc:31)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== 992 bytes in 1 blocks are possibly lost in loss record 7 of 8
+==1613090==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1613090==    by 0x486B9E7: find_sysfs_devs_nl_cb (ibdev_nl.c:157)
+==1613090==    by 0x4CDA2A0: nl_recvmsgs_report (in /lib/x86_64-linux-gnu/libnl-3.so.200.26.0)
+==1613090==    by 0x4CDA78C: nl_recvmsgs (in /lib/x86_64-linux-gnu/libnl-3.so.200.26.0)
+==1613090==    by 0x48715A7: rdmanl_get_devices (rdma_nl.c:124)
+==1613090==    by 0x486BB6D: find_sysfs_devs_nl (ibdev_nl.c:200)
+==1613090==    by 0x486CC18: ibverbs_get_device_list (init.c:560)
+==1613090==    by 0x48696F4: ibv_get_device_list@@IBVERBS_1.1 (device.c:74)
+==1613090==    by 0x10CB34: prepare(resources*) (test.cc:31)
+==1613090==    by 0x10D92E: main (test.cc:328)
+==1613090== 
+==1613090== LEAK SUMMARY:
+==1613090==    definitely lost: 16 bytes in 1 blocks
+==1613090==    indirectly lost: 0 bytes in 0 blocks
+==1613090==      possibly lost: 1,712 bytes in 2 blocks
+==1613090==    still reachable: 2,264 bytes in 5 blocks
+==1613090==         suppressed: 0 bytes in 0 blocks
+==1613090== Reachable blocks (those to which a pointer was found) are not shown.
+==1613090== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==1613090== 
+==1613090== For lists of detected and suppressed errors, rerun with: -s
+==1613090== ERROR SUMMARY: 367 errors from 107 contexts (suppressed: 0 from 0)
